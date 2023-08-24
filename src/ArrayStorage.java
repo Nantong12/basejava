@@ -45,6 +45,7 @@ public class ArrayStorage {
             resumes[i] = storage[i];
         }
         return resumes;
+
     }
 
     int size() {

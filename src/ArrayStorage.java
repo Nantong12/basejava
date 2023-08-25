@@ -4,23 +4,23 @@
 public class ArrayStorage {
 
     Resume[] storage = new Resume[10000];
-    int size = 0;
+    int size;
 
     void clear() {
         for (int i = 0; i < size; i++) {
             storage[i] = null;
-            size = 0;
         }
+        size = 0;
     }
 
     void save(Resume r) {
         storage[size] = r;
-        size ++;
+        size++;
     }
 
     Resume get(String uuid) {
         for (int i = 0; i < size; i++) {
-            if (storage[i].toString().equals(uuid)){
+            if (storage[i].toString().equals(uuid)) {
                 return storage[i];
             }
         }
@@ -29,14 +29,13 @@ public class ArrayStorage {
 
     void delete(String uuid) {
         for (int i = 0; i < size; i++) {
-            if (storage[i].toString().equals(uuid)){
+            if (storage[i].toString().equals(uuid)) {
                 storage[i] = storage[size - 1];
-                storage[size-1] = null;
+                storage[size - 1] = null;
                 break;
             }
         }
-
-        size --;
+        size--;
     }
 
     /**
@@ -48,7 +47,6 @@ public class ArrayStorage {
             resumes[i] = storage[i];
         }
         return resumes;
-
     }
 
     int size() {
